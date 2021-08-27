@@ -1,6 +1,6 @@
  MySQL  localhost:33060+ ssl  SQL > use jobdb 
  MySQL  localhost:33060+ ssl  jobdb  SQL > CREATE TABLE `applicants` ( `id` int(11) NOT NULL AUTO_INCREMENT,`job` int(11) NOT NULL,`userid` int(11) NOT NULL,PRIMARY KEY (`id`));           
-  MySQL  localhost:33060+ ssl  jobdb  SQL > desc applicants;  
+ MySQL  localhost:33060+ ssl  jobdb  SQL > desc applicants;  
   +--------+------+------+-----+---------+----------------+
   | Field  | Type | Null | Key | Default | Extra          |
   +--------+------+------+-----+---------+----------------+ 
@@ -23,7 +23,7 @@ MySQL  localhost:33060+ ssl  jobdb  SQL > desc category;
  MySQL  localhost:33060+ ssl  jobdb  SQL > UNLOCK TABLES; 
   
  MySQL  localhost:33060+ ssl  jobdb  SQL > CREATE TABLE `company` ( `id` int(11) NOT NULL AUTO_INCREMENT,`name` varchar(256) NOT NULL, `found` int(11) NOT NULL, `size` int(11) NOT NULL, `type` int(11) NOT NULL, `location` int(11) NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-  MySQL  localhost:33060+ ssl  jobdb  SQL > desc company;                                                            
+ MySQL  localhost:33060+ ssl  jobdb  SQL > desc company;                                                            
   +----------+--------------+------+-----+---------+----------------+                                                 
   | Field    | Type         | Null | Key | Default | Extra          |                                               
   +----------+--------------+------+-----+---------+----------------+                                              
@@ -37,8 +37,8 @@ MySQL  localhost:33060+ ssl  jobdb  SQL > desc category;
    MySQL  localhost:33060+ ssl  jobdb  SQL > LOCK TABLES `company` WRITE; 
    MySQL  localhost:33060+ ssl  jobdb  SQL > UNLOCK TABLES;
     
-     MySQL  localhost:33060+ ssl  jobdb  SQL > CREATE TABLE `job` (`id` int(11) NOT NULL AUTO_INCREMENT,`title` varchar(256) NOT NULL, `type` int(11) NOT NULL,`description` text NOT NULL, `salary` int(11) NOT NULL, `location` int(11) NOT NULL, `company` int(11) NOT NULL, `status` varchar(256) DEFAULT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;                                    
-     MySQL  localhost:33060+ ssl  jobdb  SQL > desc job;    
+   MySQL  localhost:33060+ ssl  jobdb  SQL > CREATE TABLE `job` (`id` int(11) NOT NULL AUTO_INCREMENT,`title` varchar(256) NOT NULL, `type` int(11) NOT NULL,`description` text NOT NULL, `salary` int(11) NOT NULL, `location` int(11) NOT NULL, `company` int(11) NOT NULL, `status` varchar(256) DEFAULT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;                                    
+   MySQL  localhost:33060+ ssl  jobdb  SQL > desc job;    
       +-------------+--------------+------+-----+---------+----------------+    
       | Field       | Type         | Null | Key | Default | Extra          |              
       +-------------+--------------+------+-----+---------+----------------+            
@@ -51,18 +51,18 @@ MySQL  localhost:33060+ ssl  jobdb  SQL > desc category;
       | company     | int          | NO   |     | NULL    |                |            
       | status      | varchar(256) | YES  |     | NULL    |                |      
       +-------------+--------------+------+-----+---------+----------------+  
-      MySQL  localhost:33060+ ssl  jobdb  SQL > LOCK TABLES `job` WRITE;
+     MySQL  localhost:33060+ ssl  jobdb  SQL > LOCK TABLES `job` WRITE;
       
-       MySQL  localhost:33060+ ssl  jobdb  SQL > CREATE TABLE `type` ( `id` int(11) NOT NULL AUTO_INCREMENT,`name` varchar(256) NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=latin1; 
-      MySQL  localhost:33060+ ssl  jobdb  SQL > desc location;       
+     MySQL  localhost:33060+ ssl  jobdb  SQL > CREATE TABLE `type` ( `id` int(11) NOT NULL AUTO_INCREMENT,`name` varchar(256) NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=latin1; 
+     MySQL  localhost:33060+ ssl  jobdb  SQL > desc location;       
       +-------+--------------+------+-----+---------+----------------+   
       | Field | Type         | Null | Key | Default | Extra          |               
       +-------+--------------+------+-----+---------+----------------+                 
       | id    | int          | NO   | PRI | NULL    | auto_increment |                    
       | name  | varchar(256) | NO   |     | NULL    |                |                   
       +-------+--------------+------+-----+---------+----------------+   
-       MySQL  localhost:33060+ ssl  jobdb  SQL >  LOCK TABLES `location` WRITE;   
-       MySQL  localhost:33060+ ssl  jobdb  SQL > UNLOCK TABLES;
+     MySQL  localhost:33060+ ssl  jobdb  SQL >  LOCK TABLES `location` WRITE;   
+     MySQL  localhost:33060+ ssl  jobdb  SQL > UNLOCK TABLES;
        
        MySQL  localhost:33060+ ssl  jobdb  SQL > CREATE TABLE `type` ( `id` int(11) NOT NULL AUTO_INCREMENT,`name` varchar(256) NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;  
         MySQL  localhost:33060+ ssl  jobdb  SQL > desc type;                                                
@@ -73,10 +73,10 @@ MySQL  localhost:33060+ ssl  jobdb  SQL > desc category;
         | name  | varchar(256) | NO   |     | NULL    |                |   
         +-------+--------------+------+-----+---------+----------------+  
         MySQL  localhost:33060+ ssl  jobdb  SQL >  LOCK TABLES `type` WRITE;
-         MySQL  localhost:33060+ ssl  jobdb  SQL > UNLOCK TABLES;  
+        MySQL  localhost:33060+ ssl  jobdb  SQL > UNLOCK TABLES;  
          
-          ySQL  localhost:33060+ ssl  jobdb  SQL > CREATE TABLE `user` ( `id` int(11) NOT NULL AUTO_INCREMENT, `name` varchar(256) NOT NULL, `email` varchar(256) NOT NULL, `phone` int(11) NOT NULL, `resume` varchar(256) NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;            
-          MySQL  localhost:33060+ ssl  jobdb  SQL > desc user;                                                              
+        MySQL  localhost:33060+ ssl  jobdb  SQL > CREATE TABLE `user` ( `id` int(11) NOT NULL AUTO_INCREMENT, `name` varchar(256) NOT NULL, `email` varchar(256) NOT NULL, `phone` int(11) NOT NULL, `resume` varchar(256) NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;            
+        MySQL  localhost:33060+ ssl  jobdb  SQL > desc user;                                                              
           +--------+--------------+------+-----+---------+----------------+                                                 
           | Field  | Type         | Null | Key | Default | Extra          |                                                   
           +--------+--------------+------+-----+---------+----------------+                                                   
@@ -86,8 +86,8 @@ MySQL  localhost:33060+ ssl  jobdb  SQL > desc category;
           | phone  | int          | NO   |     | NULL    |                |                                                  
           | resume | varchar(256) | NO   |     | NULL    |                |                                               
           +--------+--------------+------+-----+---------+----------------+   
-          MySQL  localhost:33060+ ssl  jobdb  SQL > LOCK TABLES `user` WRITE;  
-          MySQL  localhost:33060+ ssl  jobdb  SQL > UNLOCK TABLES; 
+        MySQL  localhost:33060+ ssl  jobdb  SQL > LOCK TABLES `user` WRITE;  
+        MySQL  localhost:33060+ ssl  jobdb  SQL > UNLOCK TABLES; 
           
            
        
